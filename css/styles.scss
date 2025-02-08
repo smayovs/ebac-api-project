@@ -1,0 +1,307 @@
+$colorBlue: #043c6e;
+$colorDarkBlue: #042541;
+$colorGreen: #88e23b;
+$colorLightBlue: #96cee8;
+$colorWhite: #fffffc;
+$colorOrange: #e65926;
+$colorGrey: #d9d9d9;
+$colorBlack: #232023;
+
+$fontFamily: "Rubik", Arial, Helvetica, sans-serif;
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $colorDarkBlue;
+    font-family: $fontFamily;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 10px 100px;
+    background-image: linear-gradient(180deg, $colorBlue 0%, $colorDarkBlue 100%);
+    
+    .header-img {
+        width: auto;
+        height: 100px;
+    }
+
+    .logo-div {
+        display: flex;
+        flex-direction: column;
+
+        .header-logo {
+            width: 300px;
+            height: auto;
+        }
+
+        p {
+            margin: 0;
+            font-size: 1 rem;
+            text-align: center;
+            font-weight: 400;
+            color: $colorWhite;
+            text-transform: uppercase;
+        }
+    } 
+    
+    .buttons-div {
+        display: flex;
+        flex-direction: column;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+    
+            .button {
+                appearance: none;
+                background-color: transparent;
+                border: 1.5px solid $colorGreen;
+                border-radius: 7px;
+                box-sizing: border-box;
+                color: $colorGreen;
+                cursor: pointer;
+                display: inline-block;
+                font-weight: 600;
+                margin: 0;
+                outline: none;
+                padding: 7px 20px;
+                height: 35px;
+                text-align: center;
+                text-decoration: none;
+                transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+        
+                &:disabled {
+                    pointer-events: none;
+                }
+        
+                &:hover {
+                    color: $colorBlue;
+                    background-color: $colorGreen;
+                    box-shadow: 0 8px 15px rgba($color: $colorBlack, $alpha: 0.25);
+                    transform: translateY(-2px);
+                }
+            }
+    
+            .button-active {
+                color: $colorBlue;
+                background-color: $colorGreen;
+                box-shadow: none;
+                transform: translateY(0);
+            }
+        }
+
+        .buttons-nav-div {
+            margin: 0;
+            padding-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .button-nav {
+            padding: 0;
+            margin: 0;
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: $colorWhite;
+            font-weight: 400;
+            font-size: 0.9 rem;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            
+              
+              p {
+                margin: 0;
+                position: relative;
+                font-size: 0.9 rem;
+                color: $colorWhite;
+                transition-delay: 0.2s;
+              }
+
+              svg {
+                color: $colorWhite;
+                transition: 0.2s;
+                position: relative;
+                width: 15px;
+                transition-delay: 0.2s;
+              }
+                        
+              &:hover {
+                p {
+                    color: $colorGreen;
+                  }
+
+                .feather-arrow-left {
+                    transform: translateX(4px);
+                    color: $colorGreen;
+                    }
+
+                .feather-arrow-right {
+                    transform: translateX(-4px);
+                    color: $colorGreen;
+                    }
+              }  
+        }
+
+        .disabled {
+            opacity: 0.5;
+            color: $colorGrey;
+            cursor: not-allowed;
+            pointer-events: none;
+         }
+    }
+}
+
+main {
+    background-image: linear-gradient(180deg, $colorDarkBlue 0%, $colorBlack 100%);
+    
+    .main-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        margin: 0 auto;
+        gap: 20px;
+        padding: 20px;
+
+        .character-card-bg{
+            background-image: linear-gradient(163deg, $colorGreen 0%, $colorLightBlue 100%);
+            border-radius: 20px;
+            transition: all .3s;
+            height: 410px;
+
+            &:hover {
+                box-shadow: 0px 0px 30px 1px rgba($color: $colorGreen, $alpha: 0.3);
+            }
+
+            &:active {
+                transform: scale(0.95) rotateZ(1.7deg);
+            }
+        }
+
+        .card-bg{
+            background-image: linear-gradient(163deg, $colorGreen 0%, $colorLightBlue 100%);
+            border-radius: 20px;
+            transition: all .3s;
+
+            &:hover {
+                box-shadow: 0px 0px 30px 1px rgba($color: $colorGreen, $alpha: 0.3);
+            }
+
+            &:active {
+                transform: scale(0.95) rotateZ(1.7deg);
+            }
+        }
+
+        .character-card {
+            background-image: linear-gradient(150deg, $colorBlue 0%, $colorDarkBlue 50%, $colorBlack 100%);
+            border-radius: 10px;
+            border: 1.5px solid $colorWhite;
+            transition: all .2s; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 20px;
+            cursor: pointer;
+            height: 410px;
+            gap: 20px;
+
+            &:hover {
+                transform: scale(0.98);
+                border-radius: 20px;
+                border: none;
+            }
+
+            .character-img-container {
+                flex-shrink: 0;
+                border: 1.5px solid $colorLightBlue;
+                padding: 8px 10px;
+                border-radius: 8px;
+
+                .character-img{
+                    margin-top:5px;
+                    width: auto;
+                    height: 220px;
+                }
+            }
+        }
+
+        .info-card {
+            background-image: linear-gradient(150deg, $colorBlue 0%, $colorDarkBlue 50%, $colorBlack 100%);
+            border-radius: 10px;
+            border: 1.5px solid $colorWhite;
+            transition: all .2s; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 20px;
+            cursor: pointer;
+            height: 200px;
+
+            &:hover {
+                transform: scale(0.98);
+                border-radius: 20px;
+                border: none;
+            }
+
+            &:active {
+                transform: scale(0.95) rotateZ(1.7deg);
+            }
+        }
+
+        .info-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .info-name{
+                color: $colorGreen;
+                margin: 0;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 1.1rem;
+                text-align: center;
+            }
+
+            .tag-div{
+                box-sizing: border-box;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                .tag{
+                    margin: 0;
+                    color: $colorGrey;
+                    font-weight: 300;
+                    font-size: 0.8rem;
+                }
+
+                .info{
+                    margin: 0;
+                    padding-left: 2px;
+                    color: $colorWhite;
+                    font-weight: 500;
+                    font-size: 0.8rem;
+                }
+
+                .info-alive {
+                    color: $colorGreen;
+                }
+                
+                .info-dead {
+                    color: $colorOrange;
+                }
+            }
+        }
+    }
+
+}
